@@ -1,0 +1,27 @@
+header {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.company-name {
+  font-size: 1.5rem;
+}
+
+.participant-name {
+  font-size: 1.2rem;
+}
+.participant-name a {
+  color: white;
+  text-decoration: none;
+}
+
+.participant-name a:hover {
+  text-decoration: underline;
+}

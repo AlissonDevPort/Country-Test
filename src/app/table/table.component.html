@@ -1,0 +1,41 @@
+<div class="main-content">
+  <h2>Lista de Países</h2>
+  <input
+    type="text"
+    [(ngModel)]="searchName"
+    (input)="searchCountryName()"
+    placeholder="Buscar por país..."
+  />
+  <div class="table-holder">
+    <table>
+      <thead>
+        <tr>
+          <th>Nome do País</th>
+          <th>Capital</th>
+          <th>Região</th>
+          <th>População</th>
+          <th>Bandeira</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let country of filteredCountries | paginate: { itemsPerPage: itemsPerPage, currentPage: page }">
+          <td>{{ country.name.common }}</td>
+          <td>{{ country.capital[0] }}</td>
+          <td>{{ country.region }}</td>
+          <td>{{ country.population | number }}</td>
+          <td><img [src]="country.flags.png" alt="Bandeira" width="50" /></td>
+        </tr>
+      </tbody>
+    </table>
+    <pagination-controls (pageChange)="page = $event"></pagination-controls>
+  </div>
+</div>
+<div style="max-width: 600px; margin: auto">
+  <h2 style="text-align: center">População por Região</h2>
+  <canvas
+    baseChart
+    [datasets]="populationData.datasets"
+    [labels]="populationData.labels"
+  >
+  </canvas>
+</div>

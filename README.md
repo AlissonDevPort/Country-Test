@@ -1,27 +1,37 @@
-# MySimpleRequest
+# Projeto Angular - Tabela de Países com Gráfico de População
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.11.
+Este é um projeto para teste em Angular que exibe uma tabela com informações sobre países, incluindo capital, região, população e bandeira. Além disso, ele apresenta um gráfico interativo que mostra a distribuição da população por região usando a biblioteca Chart.js. O projeto também inclui funcionalidade de busca e paginação.
 
-## Development server
+## Tecnologias Utilizadas
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Angular
+- TypeScript
+- Chart.js
+- ngx-pagination
+- RxJS
+- HTML/CSS
 
-## Code scaffolding
+## Funcionalidades
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **Tabela de Países**: Exibe uma lista de países com informações detalhadas.
+- **Gráfico Interativo**: Utiliza Chart.js para mostrar a distribuição da população por região.
+- **Busca**: Permite buscar países pelo nome.
+- **Paginação**: Implementada com ngx-pagination para facilitar a navegação na tabela.
 
-## Build
+## Estrutura do Projeto
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+O projeto possui os seguintes componentes principais:
 
-## Running unit tests
+- `app-header`: Exibe o nome da empresa e do participante.
+- `app-table`: Exibe a tabela de países e o gráfico de população.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Instalação
 
-## Running end-to-end tests
+Para instalar e rodar o projeto localmente, siga os passos abaixo:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+1. **Clone o repositório**:
+   ```bash
+   git clone https://github.com/AlissonDevPort/Country-Test.git
+   cd Country-Test
+   npm install
+   ng serve
