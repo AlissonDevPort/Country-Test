@@ -7,7 +7,10 @@
     placeholder="Buscar por país..."
   />
   <div class="table-holder">
-    <table>
+    <div *ngIf="isLoading">
+      <app-skeleton-loader></app-skeleton-loader>
+    </div>
+    <table *ngIf="!isLoading">
       <thead>
         <tr>
           <th>Nome do País</th>
@@ -18,7 +21,12 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let country of filteredCountries | paginate: { itemsPerPage: itemsPerPage, currentPage: page }">
+        <tr
+          *ngFor="
+            let country of filteredCountries
+              | paginate : { itemsPerPage: itemsPerPage, currentPage: page }
+          "
+        >
           <td>{{ country.name.common }}</td>
           <td>{{ country.capital[0] }}</td>
           <td>{{ country.region }}</td>

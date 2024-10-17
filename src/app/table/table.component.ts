@@ -25,20 +25,25 @@ export class TableComponent implements OnInit {
     ],
   };
   searchName: string = ''; 
+  isLoading: boolean = true;
 
   constructor(private countryService: CountryService) {}
 
   ngOnInit(): void {
-    this.countryService.getCountries().subscribe(
-      (data) => {
-        this.countries = data;
-        this.filteredCountries = data;
-        this.preparePopulationData();
-      },
-      (error) => {
-        console.error('Erro ao carregar os países:', error);
-      }
-    );
+    setTimeout(() => {
+      this.countryService.getCountries().subscribe(
+        (data) => {
+          this.countries = data;
+          this.filteredCountries = data;
+          this.preparePopulationData();
+          this.isLoading = false; 
+        },
+        (error) => {
+          console.error('Erro ao carregar os países:', error);
+          this.isLoading = false;
+        }
+      );
+    }, 2000); 
   }
 
   preparePopulationData() {

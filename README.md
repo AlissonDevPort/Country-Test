@@ -13,6 +13,7 @@ Este é um projeto para teste em Angular que exibe uma tabela com informações 
 
 ## Funcionalidades
 
+- **Skeleton Loader**: Com a ajuda de um delay de 2sec para uma melhor UX, adicionei um skeleton para uma pré visualização da table.
 - **Tabela de Países**: Exibe uma lista de países com informações detalhadas.
 - **Gráfico Interativo**: Utiliza Chart.js para mostrar a distribuição da população por região.
 - **Busca**: Permite buscar países pelo nome.
